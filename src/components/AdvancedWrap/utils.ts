@@ -1,0 +1,83 @@
+import React from 'react';
+import _ from 'lodash';
+// @ts-ignore
+import { advancedCates } from 'plus:/constants';
+
+export interface Cate {
+  value: string;
+  label: string;
+  type: string[];
+  alertRule: boolean; // 是否支持告警规则
+  dashboard: boolean; // 是否支持仪表盘
+  graphPro: boolean; // Pro版本
+  alertPro: boolean; // Pro版本
+  logo?: string;
+}
+
+export const baseCates: Cate[] = [
+  {
+    value: 'prometheus',
+    label: 'Prometheus',
+    type: ['metric', 'anomaly'],
+    alertRule: true,
+    dashboard: true,
+    graphPro: false,
+    alertPro: false,
+    logo: '/image/logos/prometheus.png',
+  },
+  {
+    value: 'elasticsearch',
+    label: 'Elasticsearch',
+    type: ['logging'],
+    alertRule: true,
+    dashboard: true,
+    graphPro: false,
+    alertPro: true,
+    logo: '/image/logos/elasticsearch.png',
+  },
+  {
+    value: 'tdengine',
+    label: 'TDengine',
+    type: ['metric'],
+    alertRule: true,
+    dashboard: true,
+    graphPro: false,
+    alertPro: false,
+    logo: '/image/logos/tdengine.png',
+  },
+  {
+    value: 'loki',
+    label: 'Loki',
+    type: ['loki', 'logging'], // loki 是历史版本里一个过度的分类，后续会废弃
+    alertRule: true,
+    dashboard: false,
+    graphPro: false,
+    alertPro: false,
+    logo: '/image/logos/loki.png',
+  },
+  {
+    value: 'jaeger',
+    label: 'Jaeger',
+    type: ['tracing'],
+    alertRule: false,
+    dashboard: false,
+    graphPro: false,
+    alertPro: false,
+    logo: '/image/logos/jaeger.png',
+  },
+];
+
+export const allCates = [...baseCates, ...advancedCates];
+
+export const getAuthorizedDatasourceCates = (feats, isPlus, filter?: (cate: any) => boolean) => {
+  let cates = baseCates;
+  if (feats && isPlus) {
+    cates = _.filter(feats.plugins, (plugin) => {
+      return _.find(allCates, { value: plugin.value });
+    });
+  }
+  if (filter) {
+    cates = _.filter(cates, filter);
+  }
+  return cates;
+};
