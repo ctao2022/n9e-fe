@@ -12,7 +12,7 @@ const ja_JP = {
   document_url: 'ドキュメントのURL',
   document_url_tip: 'デフォルトの夜莺ドキュメントリンクのURLをオーバーライドします',
   page_title: 'サイトのタイトル',
-  page_title_tip: 'デフォルトのタイトル (Nightingale) をオーバーライドします',
+  page_title_tip: 'デフォルトのタイトル (監視システムです) をオーバーライドします',
   home_page_url: 'ホームページのURL',
   home_page_url_tip: 'ホームページのURLをオーバーライドします (/metric/explorer)',
   displayMode: {

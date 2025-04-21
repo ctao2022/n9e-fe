@@ -1,0 +1,18 @@
+.number-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%; /* 确保数字区域占满整个高度 */
+}
+
+.number {
+  margin: 5px 0; /* 调整数字之间的间距 */
+}
+
+.divider {
+  width: 80%;
+  height: 1px;
+  background-color: #ccc; /* 横线颜色 */
+  margin: 5px 0; /* 横线与数字之间的间距 */
+}

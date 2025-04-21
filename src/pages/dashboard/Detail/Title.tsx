@@ -84,9 +84,11 @@ export default function Title(props: IProps) {
   const [panelClipboard, setPanelClipboard] = useGlobalState('panelClipboard');
 
   useEffect(() => {
-    document.title = `${dashboard.name} - ${siteInfo?.page_title || cachePageTitle}`;
+    // document.title = `${dashboard.name} - ${siteInfo?.page_title || cachePageTitle}`;
+    document.title = `${dashboard.name} - 监控系统`;
     return () => {
-      document.title = siteInfo?.page_title || cachePageTitle;
+      //document.title = siteInfo?.page_title || cachePageTitle;
+      document.title =  "监控系统";
     };
   }, [dashboard.name]);
 

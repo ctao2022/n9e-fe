@@ -36,6 +36,29 @@ export const getMenuList = (t) => {
           key: '/embedded-dashboards',
           label: t('embeddedDashboards:title'),
         },
+        {
+          key: '/test',
+          label: t('平台介绍'),
+        },
+        {
+          key: '/slurm',
+          label: t('作业信息'),
+        },
+      ],
+    },
+    {
+      key: 'targets',
+      icon: <IconFont type='icon-Menu_Infrastructure' />,
+      label: t('基础设施'),
+      children: [
+        {
+          key: '/targets',
+          label: t('监控机器'),
+        },
+        {
+          key: '/serverStatus',
+          label: t('服务器状态'),
+        },
       ],
     },
     {
@@ -61,17 +84,17 @@ export const getMenuList = (t) => {
         },
       ],
     },
-    {
-      key: 'log',
-      icon: <IconFont type='icon-Menu_LogAnalysis' />,
-      label: t('日志分析'),
-      children: [
-        {
-          key: '/log/explorer',
-          label: t('即时查询'),
-        },
-      ],
-    },
+    // {
+    //   key: 'log',
+    //   icon: <IconFont type='icon-Menu_LogAnalysis' />,
+    //   label: t('日志分析'),
+    //   children: [
+    //     {
+    //       key: '/log/explorer',
+    //       label: t('即时查询'),
+    //     },
+    //   ],
+    // },
     {
       key: 'alarm',
       icon: <IconFont type='icon-Menu_AlarmManagement' />,
@@ -126,17 +149,6 @@ export const getMenuList = (t) => {
         {
           key: '/job-tasks',
           label: t('执行历史'),
-        },
-      ],
-    },
-    {
-      key: 'targets',
-      icon: <IconFont type='icon-Menu_Infrastructure' />,
-      label: t('基础设施'),
-      children: [
-        {
-          key: '/targets',
-          label: t('监控机器'),
         },
       ],
     },
@@ -235,6 +247,7 @@ const SideMenu = () => {
         .flat(),
     [menuList],
   );
+  console.log('menus:', menus);
   const hideSideMenu = useMemo(() => {
     if (
       location.pathname === '/login' ||
@@ -272,8 +285,10 @@ const SideMenu = () => {
           return item.children && item.children.length > 0;
         },
       );
+      // console.log('newMenus:', newMenus);
       setMenus(newMenus);
     }
+    
   }, [profile?.roles, i18n.language]);
 
   useEffect(() => {
@@ -356,3 +371,4 @@ const SideMenu = () => {
 };
 
 export default SideMenu;
+

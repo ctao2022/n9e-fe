@@ -206,7 +206,8 @@ function App() {
             console.error(e);
           }
         }
-        document.title = siteInfo?.page_title || 'Nightingale';
+        //document.title = siteInfo?.page_title || 'Nightingale';
+        document.title = "监控系统";//修改页面标签标题
         if (iconLink) {
           iconLink.href = siteInfo?.favicon_url || '/image/favicon.ico';
         }

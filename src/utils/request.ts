@@ -93,7 +93,7 @@ request.interceptors.response.use(
           // proxy/elasticsearch 返回的数据结构是 { ...data }
           // proxy/jeager 返回的数据结构是 { data: [], errors: [] }
           if (
-            _.some([`/api/${N9E_PATHNAME}/proxy`, '/probe/v1'], (item) => {
+            _.some([`/api/${N9E_PATHNAME}/proxy`, '/probe/v1','/slurm_api'], (item) => {
               return url.includes(item);
             })
           ) {

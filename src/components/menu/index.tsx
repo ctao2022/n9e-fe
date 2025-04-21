@@ -48,6 +48,14 @@ const getMenuList = (t) => {
           key: '/dashboards-built-in',
           label: t('内置仪表盘'),
         },
+        {
+          key: '/test',
+          label: t('机仓图'),
+        },
+        {
+          key: '/slurm',
+          label: t('作业信息'),
+        },
       ],
     },
     {
@@ -143,6 +151,10 @@ const getMenuList = (t) => {
         {
           key: '/targets',
           label: t('监控机器'),
+        },
+        {
+          key: '/serverStatus',
+          label: t('服务器状态'),
         },
       ],
     },

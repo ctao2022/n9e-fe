@@ -12,7 +12,7 @@ const zh_CN = {
   document_url: '文档地址',
   document_url_tip: '覆盖默认的夜莺文档链接地址',
   page_title: '站点标题',
-  page_title_tip: '覆盖默认的标题 (Nightingale)',
+  page_title_tip: '覆盖默认的标题 (监控系统)',
   home_page_url: '首页地址',
   home_page_url_tip: '覆盖首页地址 (/metric/explorer)',
   displayMode: {

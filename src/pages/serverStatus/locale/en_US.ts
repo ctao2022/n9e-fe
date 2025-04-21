@@ -1,7 +1,7 @@
 const en_US = {
   仪表盘: 'Dashboards',
   监控仪表盘: 'Dashboards',
-  机舱图:'Machinery Room',
+  机仓图:'Machinery Room',
   内置仪表盘: 'Built-in',
   时序指标: 'Metrics',
   即时查询: 'Explorer',

@@ -11,7 +11,7 @@ const zh_HK = {
   document_url: '文檔鏈接 URL',
   document_url_tip: '覆蓋默認的夜鶯文檔鏈接地址',
   page_title: '站點標題',
-  page_title_tip: '覆蓋默認的標題 (Nightingale)',
+  page_title_tip: '覆蓋默認的標題 (监控系统)',
   home_page_url: '主站鏈接',
   home_page_url_tip: '覆蓋默認的主站鏈接 (/metric/explorer)',
   displayMode: {

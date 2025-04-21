@@ -43,11 +43,14 @@ export default defineConfig(({ mode }) => {
   // 后端接口地址
   // 也可以通过环境变量来设置，创建 `.env` 文件，内容为 `PROXY=http://localhost:8080`
   let proxyURL = env.PROXY || 'http://192.168.100.37:17000';
+  let proxyURL1 ='http://192.168.100.37:5000';
   let fontFamily = '"Microsoft Yahei",Verdana,Helvetica Neue,sans-serif,PingFangSC-Regular,simsun,"sans-serif"';
   if (env.VITE_IS_PRO) {
     proxyURL = env.PROXY_PRO;
+    proxyURL1 = env.PROXY_PRO;
   } else if (env.VITE_IS_ENT) {
     proxyURL = env.PROXY_ENT;
+    proxyURL1 = env.PROXY_ENT;
     fontFamily = 'Helvetica Neue,sans-serif,PingFangSC-Regular,microsoft yahei ui,microsoft yahei,simsun,"sans-serif"';
   }
 
@@ -80,6 +83,10 @@ export default defineConfig(({ mode }) => {
       proxy: {
         '/api': {
           target: proxyURL,
+          changeOrigin: true,
+        },
+        '/slurm_api': {
+          target: proxyURL1,
           changeOrigin: true,
         },
       },

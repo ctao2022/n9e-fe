@@ -47,6 +47,7 @@ import EventDetail from '@/pages/event/detail';
 import historyEvents from '@/pages/historyEvents';
 import Targets from '@/pages/targets';
 import Demo from '@/pages/demo';
+import Demo1 from '@/pages/test';
 import TaskTpl from '@/pages/taskTpl';
 import TaskTplAdd from '@/pages/taskTpl/add';
 import TaskTplDetail from '@/pages/taskTpl/detail';
@@ -69,12 +70,15 @@ import MigrateDashboards from '@/pages/help/migrate';
 import VariableConfigs from '@/pages/variableConfigs';
 import SiteSettings from '@/pages/siteSettings';
 import { dynamicPackages, Entry, dynamicPages } from '@/utils';
+import slurm from '@/pages/platformOverview';
+import serverStatus from '@/pages/serverStatus';
 // @ts-ignore
 import { Jobs as StrategyBrain } from 'plus:/datasource/anomaly';
 // @ts-ignore
 import plusLoader from 'plus:/utils/loader';
 // @ts-ignore
 import useIsPlus from 'plus:/components/useIsPlus';
+//添加自定义页面
 
 const Packages = dynamicPackages();
 let lazyRoutes = Packages.reduce((result: any, module: Entry) => {
@@ -132,6 +136,7 @@ export default function Content() {
     <div className='content'>
       <Switch>
         <Route path='/demo' component={Demo} />
+        <Route path='/test' component={Demo1} />
         <Route path='/overview' component={Overview} />
         <Route path='/login' component={Login} exact />
         <Route path='/callback' component={LoginCallback} exact />
@@ -204,6 +209,9 @@ export default function Content() {
         <Route exact path='/permissions' component={Permissions} />
 
         <Route exact path='/site-settings' component={SiteSettings} />
+         {/* 添加自定义路由  */}
+        <Route path='/slurm' component={slurm} />
+        <Route exact path='/serverStatus' component={serverStatus} />
 
         {lazyRoutes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
@@ -221,6 +229,7 @@ export default function Content() {
         <Route path='/404' component={NotFound} />
         <Route path='/out-of-service' component={OutOfService} />
         <Route path='*' component={NotFound} />
+
       </Switch>
     </div>
   );

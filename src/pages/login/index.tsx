@@ -123,7 +123,7 @@ export default function Login() {
       {/* <img src={'/image/login-left-top-corner.png'} className='left-top-bg'></img> */}
       {/* <img src={'/image/login-right-bottom-corner.png'} className='right-bottom-bg'></img> */}
       <div className='banner integration'>
-        <img src={'/image/login-dashboard.svg'} style={{ margin: '0 60px', zIndex: 5, width: 632 }}></img>
+        {/* <img src={'/image/login-dashboard.svg'} style={{ margin: '0 60px', zIndex: 5, width: 632 }}></img> */}
       </div>
       <div className='login-panel'>
         <div className='login-main  integration'>
@@ -187,7 +187,7 @@ export default function Login() {
                 {t('登录')}
               </Button>
             </Form.Item>
-            <div className='login-other'>
+            {/* <div className='login-other'>
               <strong>其他登录方式：</strong>
               <a
                 onClick={() => {
@@ -231,7 +231,7 @@ export default function Login() {
               >
                 {displayName.oauth}
               </a>
-            </div>
+            </div> */}
           </Form>
         </div>
       </div>
