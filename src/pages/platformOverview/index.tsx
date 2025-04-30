@@ -168,7 +168,7 @@ export default function PlatformOverview() {
         <PageLayout
             title={
                 <>
-                    <Icon component={SystemInfoSvg as any} /> {('平台介绍')}
+                    <Icon component={SystemInfoSvg as any} /> {('作业信息')}
                 </>
             }
         >

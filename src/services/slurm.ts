@@ -47,3 +47,12 @@ export const getinfo = function () {
     // },
   });
 };
+//获取设备状态
+export const getdevstatus = function () {
+  return request(`/slurm_api/dev_status`, {
+    method: RequestMethod.Get,
+    // data: {
+    //   refresh_token: localStorage.getItem('refresh_token'),
+    // },
+  });
+};

@@ -26,8 +26,12 @@ export const getMenuList = (t) => {
     {
       key: 'dashboard',
       icon: <IconFont type='icon-Menu_Dashboard' />,
-      label: t('仪表盘'),
+      label: t('平台监控'),
       children: [
+        {
+          key: '/targets',
+          label: t('监控机器'),
+        },
         {
           key: '/dashboards',
           label: t('监控仪表盘'),
@@ -47,20 +51,43 @@ export const getMenuList = (t) => {
       ],
     },
     {
-      key: 'targets',
-      icon: <IconFont type='icon-Menu_Infrastructure' />,
-      label: t('基础设施'),
+      key: 'manage',
+      icon: <IconFont type='icon-Menu_PersonnelOrganization' />,
+      label: t('人员组织'),
       children: [
         {
-          key: '/targets',
-          label: t('监控机器'),
+          key: '/users',
+          label: t('用户管理'),
         },
         {
-          key: '/serverStatus',
-          label: t('服务器状态'),
+          key: '/user-groups',
+          label: t('团队管理'),
+        },
+        {
+          key: '/busi-groups',
+          label: t('业务组管理'),
+        },
+        {
+          key: '/permissions',
+          label: t('权限管理'),
         },
       ],
     },
+    // {
+    //   key: 'targets',
+    //   icon: <IconFont type='icon-Menu_Infrastructure' />,
+    //   label: t('基础设施'),
+    //   children: [
+    //     {
+    //       key: '/targets',
+    //       label: t('监控机器'),
+    //     },
+    //     {
+    //       key: '/serverStatus',
+    //       label: t('服务器状态'),
+    //     },
+    //   ],
+    // },
     {
       key: 'metric',
       icon: <IconFont type='icon-IndexManagement1' />,
@@ -152,29 +179,7 @@ export const getMenuList = (t) => {
         },
       ],
     },
-    {
-      key: 'manage',
-      icon: <IconFont type='icon-Menu_PersonnelOrganization' />,
-      label: t('人员组织'),
-      children: [
-        {
-          key: '/users',
-          label: t('用户管理'),
-        },
-        {
-          key: '/user-groups',
-          label: t('团队管理'),
-        },
-        {
-          key: '/busi-groups',
-          label: t('业务组管理'),
-        },
-        {
-          key: '/permissions',
-          label: t('权限管理'),
-        },
-      ],
-    },
+
     {
       key: 'integrations',
       icon: <IconFont type='icon-shujujicheng' />,
@@ -247,7 +252,7 @@ const SideMenu = () => {
         .flat(),
     [menuList],
   );
-  console.log('menus:', menus);
+  // console.log('menus:', menus);
   const hideSideMenu = useMemo(() => {
     if (
       location.pathname === '/login' ||

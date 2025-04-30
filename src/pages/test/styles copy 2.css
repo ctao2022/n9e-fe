@@ -196,7 +196,7 @@
 .right-device-container-item{
   display: flex;
   align-items: center;
-  padding: 8px 0px 0px 0px;
+  padding: 24px 0px 0px 0px;
   border-bottom: 1px solid #f0f0f0;
   transition: all 0.2s;
 }
@@ -206,11 +206,10 @@
 
 .right-device-container-item-div {
   width: 8px;
-  height: 8px;
-  /* background-color: var(--item-color); */
-  background-color:#2f54eb ;
+  height: 32px;
+  background-color: var(--item-color);
   margin-right: 16px;
-  border-radius: 50%;
+  border-radius: 4px;
   top: 20px;
 }
 
@@ -219,8 +218,8 @@
   font-size: 16px;
   margin-bottom: 4px;
   
-   /* writing-mode: vertical-rl;
-   text-orientation: upright; */
+   writing-mode: vertical-rl;
+   text-orientation: upright;
 }
 
 .right-device-container-item-count {
@@ -228,18 +227,18 @@
   font-weight: bold;
   /* color: #1f1f1f; */
 
-  /* margin-top: 8px;
+  margin-top: 8px;
   writing-mode: vertical-rl;
-  text-orientation: upright; */
+  text-orientation: upright;
 }
 
 .right-device-container-item-unit {
   font-size: 16px;
   /* color: #8c8c8c; */
-  /* margin-top: 8px; */
+  margin-top: 8px;
 
-  /* writing-mode: vertical-rl;
-  text-orientation: upright; */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 .device-group{

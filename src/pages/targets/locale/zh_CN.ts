@@ -16,7 +16,7 @@ const zh_CN = {
   target_up: '状态',
   mem_util: '内存',
   cpu_util: 'CPU',
-  cpu_num: '核数',
+  cpu_num: '核（组）数',
   offset: '时间偏移',
   offset_tip: '计算逻辑为用 夜莺部署机器的时间减去categraf部署机器的时间',
   os: '操作系统',
